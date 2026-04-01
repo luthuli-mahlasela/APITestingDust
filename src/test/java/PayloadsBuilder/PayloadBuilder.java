@@ -16,22 +16,21 @@ public class PayloadBuilder {
         return loginUser;
     }
 
-    public static JSONObject RegisterNewUserPayload(String firstName, String lastName, String email, String password, String confirmPassword, String groupId) {
-        JSONObject registerNewUser = new JSONObject();
-        registerNewUser.put("firstName", firstName);
-        registerNewUser.put("lastName", lastName);
-        registerNewUser.put("email", email);
-        registerNewUser.put("password", password);
-        registerNewUser.put("confirmedPassword", password);
-        registerNewUser.put("groupId", groupId);
+    public static JSONObject RegisterNewUserPayload(String firstName, String lastName, String email, String password, String groupId) {
+        JSONObject registerUser = new JSONObject();
+        registerUser.put("firstName", firstName);
+        registerUser.put("lastName", lastName);
+        registerUser.put("email", email);
+        registerUser.put("password", password);
+        registerUser.put("confirmPassword", password);
+        registerUser.put("groupId", groupId);
 
-        return registerNewUser;
-
+        return registerUser;
     }
 
-    public static JSONObject ApproveAdminUserPayload(String role) {
+    public static JSONObject ApproveAdminUserPayload(String admin) {
         JSONObject approveAdminUser = new JSONObject();
-        approveAdminUser.put("admin", role);
+        approveAdminUser.put("role", admin);
 
         return approveAdminUser;
     }
