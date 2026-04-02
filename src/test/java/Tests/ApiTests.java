@@ -61,13 +61,8 @@ public class ApiTests {
     }
     @Test(dependsOnMethods = "loginNewAdminUserTest")
     public void adminloginTest2(){
-        ResponseBuilder.loginUserResponse("admin@gmail.com","@12345678")
-                .then()
-                .log().all()
-                .assertThat()
-                .statusCode(200)
-                .body("success",equalTo(true));
 
+        this.adminloginTest();
 
     }
     @Test(dependsOnMethods = "adminloginTest2")
