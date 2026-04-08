@@ -1,14 +1,23 @@
 package Tests;
 
 import RequestBuilder.ResponseBuilder;
+import Utilities.DatabaseConnection;
 import com.github.javafaker.Faker;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.sql.SQLException;
 
 import static org.hamcrest.Matchers.equalTo;
 
 public class ApiTests {
 
     static String registeredEmail ;
+
+    @BeforeClass
+    public void setup() throws SQLException {
+        DatabaseConnection.dbConnection();
+    }
 
     @Test(priority = 0)
     public void registerNewUserTest(){
